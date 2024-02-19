@@ -16,6 +16,9 @@ class Food extends Product {
         $this->weight = $weight;
     }
 
+    public function printClass() {
+        return "Cibo";
+    }
 }
 
 // $chili = new Food('Chili', 'ciao', 3, 'ciao category', 300, 'descrizione', 259 ,'ciao expire', 'ciao flavour', 1000);

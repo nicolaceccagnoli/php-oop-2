@@ -13,6 +13,10 @@ class DogHouse extends Product {
         $this->size = $size;
     }
 
+    public function printClass() {
+        return "Cuccia";
+    }
+
 }
 
 // $doghouse = new DogHouse('DogHouse', 'ciao', 3, 'ciao category', 300, 'descrizione', 259 ,'ciao material', 1000);

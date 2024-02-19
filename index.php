@@ -91,10 +91,10 @@
                                     </p>
                                     <p class="card-text">
                                         <span>
-                                            Tipo: 
+                                            Categoria: 
                                         </span>
                                         <?php
-                                            echo get_class($product);
+                                            echo $product->printClass();
                                         ?>
                                     </p>
                                 </div>

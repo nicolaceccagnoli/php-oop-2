@@ -14,6 +14,11 @@ class Toys extends Product {
         $this->isOutdoor = $isOutdoor;
     }
 
+    public function printClass() {
+        return "Giocattoli";
+    }
+
+
 }
 
 // $toyOne = new Toys('Toys', 'ciao', 3, 'ciao category', 300, 'descrizione', 259 ,'ciao material', true);
