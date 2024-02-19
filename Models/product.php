@@ -21,4 +21,5 @@ class Product {
         $this->rating = $rating;
 
     }
+
 }

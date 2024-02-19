@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__."/Product.php";
+require_once __DIR__."/Product.php";
 
 class Food extends Product {
 
@@ -18,5 +18,5 @@ class Food extends Product {
 
 }
 
-$chili = new Food('Chili', 'ciao', 3, 'ciao category', 300, 'descrizione', 259 ,'ciao expire', 'ciao flavour', 1000);
-var_dump($chili);
+// $chili = new Food('Chili', 'ciao', 3, 'ciao category', 300, 'descrizione', 259 ,'ciao expire', 'ciao flavour', 1000);
+// var_dump($chili);
