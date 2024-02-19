@@ -26,10 +26,18 @@
     
     $cart = [];
 
+    $expireDateTwo = new DateTime("2024-12-25");
+    $userTwoCreditCard = new CreditCard("Visa", $expireDateTwo);
+
+    $userTwo = new User('Nicola', 'nicola@gmail.com', 'verystrongpassword', $userTwoCreditCard);
+    // var_dump( $userTwo );
+
+    // var_dump( $userTwo->getPassword() );
+
     function userDiscount() {
 
         foreach ($productArray as $product) {
-            
+
             if ($userTwo->name != null && $userTwo->email != null && $userTwo->password != null) {
                 $discountedPrice = $product->price * 0.8; 
                 $product->price = $discountedPrice;
@@ -41,17 +49,15 @@
 
             $expireDate = $userTwo->userTwoCreditCard->expireDate;
 
-            if ($today > $expireDate) {
+            if ($today < $expireDate) {
                 echo 'ATTENZIONE: La carta di credito è scaduta';
             } else {
                 echo 'Che bello puoi pagare amico mio';
-            }
-            
+            } 
+
         }
     }  
     
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

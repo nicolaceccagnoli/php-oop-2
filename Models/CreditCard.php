@@ -1,6 +1,7 @@
 <?php
 
 class CreditCard {
+
     public $circuit;
     public $expireDate;
 
@@ -10,5 +11,3 @@ class CreditCard {
     }
 }
 
-$expireDateTwo = new DateTime("2024-12-25");
-$userTwoCreditCard = new CreditCard("Visa", $expireDateTwo);
