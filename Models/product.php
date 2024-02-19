@@ -20,7 +20,6 @@ class Product {
         }
     }
     
-
     public function __construct(string $name, string $img, int $price, string $category, int $stock, string $description = null, int $rating = null ) {
 
         $this->name = $name;

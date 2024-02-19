@@ -4,6 +4,10 @@
     require_once __DIR__."/Models/Food.php";
     require_once __DIR__."/Models/Toys.php";
     require_once __DIR__."/Models/DogHouse.php";
+    require_once __DIR__."/Models/User.php";
+
+    $userOne = new User('Marco', 'marco@gmail.com', 'password');
+    // var_dump($userOne);
 
     $productArray = [];
 
@@ -21,6 +25,15 @@
     $productArray[] = $dogHouseOne;
 
     // var_dump($productArray);
+
+    foreach ($productArray as $product) {
+        function userDiscount() {
+            if ($userOne->name != null && $userOne->email != null && $userOne->password != null) {
+                $discountedPrice = $product->price * 0.8; 
+                $product->price = $discountedPrice;
+            }
+        }
+    }   
 
 ?>
 <!DOCTYPE html>
