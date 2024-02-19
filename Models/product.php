@@ -4,11 +4,11 @@ class Product {
 
     public $name;
     public $img;
-    protected $price;
-    protected $category;
-    protected $stock;
+    public $price;
+    public $category;
+    public $stock;
     public $description;
-    protected $rating;
+    public $rating;
 
     public function __construct(string $name, string $img, int $price, string $category, int $stock, string $description = null, int $rating = null ) {
 
