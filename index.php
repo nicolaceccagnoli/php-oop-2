@@ -38,9 +38,10 @@
 
         foreach ($productArray as $product) {
 
-            if ($userTwo->name != null && $userTwo->email != null && $userTwo->password != null) {
+            if ($userTwo->name !== null && $userTwo->email !== null && $userTwo->password !== null) {
                 $discountedPrice = $product->price * 0.8; 
                 $product->price = $discountedPrice;
+
             }
 
             $cart[] = $product;
