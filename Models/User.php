@@ -17,4 +17,5 @@ class User {
     }
 }
 
-$userTwo = new User('');
+$userTwo = new User('Nicola', 'nicola@gmail.com', 'verystrongpassword', $userTwoCreditCard);
+// var_dump( $userTwo );

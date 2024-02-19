@@ -6,8 +6,6 @@
     require_once __DIR__."/Models/DogHouse.php";
     require_once __DIR__."/Models/User.php";
 
-    $userOne = new User('Marco', 'marco@gmail.com', 'password');
-    // var_dump($userOne);
 
     $productArray = [];
 
@@ -25,15 +23,34 @@
     $productArray[] = $dogHouseOne;
 
     // var_dump($productArray);
+    
+    $cart = [];
 
-    foreach ($productArray as $product) {
-        function userDiscount() {
-            if ($userOne->name != null && $userOne->email != null && $userOne->password != null) {
+    function userDiscount() {
+
+        foreach ($productArray as $product) {
+            
+            if ($userTwo->name != null && $userTwo->email != null && $userTwo->password != null) {
                 $discountedPrice = $product->price * 0.8; 
                 $product->price = $discountedPrice;
             }
+
+            $cart[] = $product;
+
+            $today = new DateTime();
+
+            $expireDate = $userTwo->userTwoCreditCard->expireDate;
+
+            if ($today > $expireDate) {
+                echo 'ATTENZIONE: La carta di credito è scaduta';
+            } else {
+                echo 'Che bello puoi pagare amico mio';
+            }
+            
         }
-    }   
+    }  
+    
+
 
 ?>
 <!DOCTYPE html>
