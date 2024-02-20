@@ -9,18 +9,44 @@
 
     $productArray = [];
 
-    $toyOne = new Toys('Osso di Gomma', 'https://www.shoppypet.com/4501/ferplast-pa-6408-osso-in-termoplastica-per-cani.jpg', 5, 'Cane', 25, 'Bone è la risposta per i cani che prediligono la classica forma ad osso', 4 ,'Gomma', true);
-    // var_dump($toyOne);
+    try {
+        $toyOne = new Toys('Osso di Gomma', 'https://www.shoppypet.com/4501/ferplast-pa-6408-osso-in-termoplastica-per-cani.jpg', 5, 'Cane', 25, 'Bone è la risposta per i cani che prediligono la classica forma ad osso', 4 ,'Gomma', true);
 
-    $dogHouseOne = new DogHouse('Letto Mochi', 'https://m.media-amazon.com/images/I/61Pn7D5S4JL._AC_UF1000,1000_QL80_.jpg', 10, 'Gatto', 12, 'Letto rotondo antistress Mochi per gatti e cani di tg piccola', 5 ,'Gomma', 55);
-    // var_dump($dogHouseOne);
+        // var_dump($toyOne);
 
-    $foodOne = new Food('Royal Canin', 'https://arcaplanet.vtexassets.com/arquivos/ids/288255/_0006_mini-adult.jpg?v=638242443211300000', 3, 'Cane', 50, 'Le crocchette di Salmone e Riso sono un alimento completo per cani di tutte le taglie', 2 ,'2024-05-05', 'Salmone e Riso', 1000);
-    // var_dump($foodOne);
+        $productArray[] = $toyOne;
 
-    $productArray[] = $toyOne;
-    $productArray[] = $foodOne;
-    $productArray[] = $dogHouseOne;
+    } 
+    catch (Exception $e) {
+        echo $e->getMessage();
+    }
+
+    try {
+
+        $dogHouseOne = new DogHouse('Letto Mochi', 'https://m.media-amazon.com/images/I/61Pn7D5S4JL._AC_UF1000,1000_QL80_.jpg', 10, 'Gatto', 15, 'Letto rotondo antistress Mochi per gatti e cani di tg piccola', 5 ,'Gomma', 55);
+
+        // var_dump($dogHouseOne);
+
+        $productArray[] = $dogHouseOne;
+
+    } catch (Exception $e) {
+
+        echo '<br><br>'.$e->getMessage();
+
+    }
+
+    try { 
+
+        $foodOne = new Food('Royal Canin', 'https://arcaplanet.vtexassets.com/arquivos/ids/288255/_0006_mini-adult.jpg?v=638242443211300000', 3, 'Cane', 50, 'Le crocchette di Salmone e Riso sono un alimento completo per cani di tutte le taglie', 2 ,'2024-05-05', 'Salmone e Riso', 1000);
+
+        // var_dump($foodOne);
+
+        $productArray[] = $foodOne;
+
+        
+    } catch (Exception $e) {
+        echo '<br><br>'.$e->getMessage();
+    }
 
     // var_dump($productArray);
     

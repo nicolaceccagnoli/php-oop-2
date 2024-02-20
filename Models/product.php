@@ -25,16 +25,26 @@ class Product {
         }
     }
     
-    public function __construct(string $name, string $img, int $price, string $category, int $stock, string $description = null, int $rating = null ) {
+    public function __construct(string $name, string $img, $price, string $category, $stock, string $description = null, int $rating = null ) {
 
         $this->name = $name;
         $this->img = $img;
-        $this->price = $price;
+        if (is_numeric($price)) {
+            $this->price = $price;
+        } else {
+            throw new Exception("Valore prezzo non valido");
+        }
         $this->category = $category;
-        $this->stock = $stock;
+        if (is_numeric($stock)) {
+            $this->stock = $stock;
+        } else {
+            throw new Exception("Valore Stock non valido");
+        }
         $this->description = $description;
-        $this->rating = $rating;
-
+        if (is_numeric($rating)) {
+            $this->rating = $rating;
+        } else {
+            throw new Exception("Valore Voto non valido");
+        }
     }
-
 }
