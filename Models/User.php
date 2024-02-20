@@ -35,7 +35,7 @@ class User {
     //     return $this->email;
     // }
 
-    public function __construct( string $name, string $email, string $password, CreditCard $creditCard ) {
+    public function __construct( string $name = null, string $email = null, string $password = null, CreditCard $creditCard ) {
         $this->name = $name;
         $this->email = $email;
         $this->password = $password;

@@ -9,6 +9,11 @@ class Product {
     public $stock;
     public $description;
     public $rating;
+    public static $discount = 0.8;
+
+    public function getDiscount() {
+        return $this->price * self::$discount;
+    }
 
     public function printClass() {
         $className = get_class($this);

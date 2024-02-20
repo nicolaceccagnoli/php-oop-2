@@ -30,41 +30,19 @@
     $userTwo = new User('Nicola', 'nicola@gmail.com', 'verystrongpassword', $userTwoCreditCard);
     // var_dump( $userTwo );
 
-    // var_dump( $userTwo->getPassword() );
-
-    function userDiscount($productArray, $userTwo) {
-
-        $cart = [];
-
-        foreach ($productArray as $product) {
-
-            if ($userTwo->name !== null && $userTwo->email !== null && $userTwo->password !== null) {
-                $discountedPrice = $product->price * 0.8; 
-                $product->price = $discountedPrice;
-
-            }
-
-            $cart[] = $product;
-
-        }
-
-        return $cart;
-
-    }  
-
-    function payByCard($userTwo) {
+    function payByCard($user) {
 
         $today = new DateTime();
 
-        $expireDate = $userTwo->userTwoCreditCard->expireDate;
-
-        if ($today < $expireDate) {
+        if ($today < $user->userTwoCreditCard->expireDate) {
             echo 'ATTENZIONE: La carta di credito è scaduta';
         } else {
             echo 'Che bello puoi pagare amico mio';
         } 
 
     }
+
+    // echo payByCard($userTwo);
     
 ?>
 <!DOCTYPE html>
@@ -121,7 +99,9 @@
                                             Prezzo:
                                         </span>
                                         <?php
-                                            echo $product->price;
+                                        if ($userTwo->name !== null && $userTwo->email !== null && $userTwo->password !== null) {
+                                            echo  $product->getDiscount();
+                                        }
                                         ?>
                                         €
                                     </h6>
