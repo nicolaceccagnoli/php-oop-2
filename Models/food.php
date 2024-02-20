@@ -1,10 +1,12 @@
 <?php
 
 require_once __DIR__."/Product.php";
+require_once __DIR__."/../traits/ExpireDate.php";
+
 
 class Food extends Product {
 
-    public $expireDate;
+    use ExpireDate;
     public $flavour;
     public $weight;
 

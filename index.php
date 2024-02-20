@@ -105,6 +105,30 @@
                                         ?>
                                         €
                                     </h6>
+                                    <?php 
+                                        if (get_class($product) == 'Toys') {                                 
+                                    ?>
+                                    <p>
+                                        Materiale: <?php echo $product->material; ?>
+                                    </p>
+                                    <?php 
+                                        } 
+                                        else if (get_class($product) == 'Food') {                                 
+                                    ?>
+                                    <p>
+                                        Data di scadenza: <?php echo $product->expireDate; ?>
+                                    </p>
+                                    <?php 
+                                        } 
+                                        else if (get_class($product) == 'DogHouse') {                                 
+                                    ?>
+                                    <p>
+                                        Dimensioni: <?php echo $product->size; ?>
+                                    </p>
+                                    <?php 
+                                        } 
+                                    ?>
+
                                     <p class="card-text">
                                         <span>
                                             Per: 
